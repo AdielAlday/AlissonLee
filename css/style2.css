@@ -1,0 +1,132 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    color: white;
+}
+
+/* PRIMERA INTERFAZ (LOGIN) */
+#login-screen {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    background: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* CORAZÓN ANIMADO */
+.heart {
+    width: 50px;
+    height: 50px;
+    background: white;
+    position: absolute;
+    bottom: 20px;
+    clip-path: polygon(50% 15%, 100% 40%, 80% 90%, 50% 80%, 20% 90%, 0% 40%);
+    animation: beat 1s infinite alternate;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+/* SEGUNDA INTERFAZ */
+.hidden {
+    display: none;
+}
+
+#main-screen {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 🌷 RAMO DE TULIPANES */
+.tulips {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tulips::before {
+    content: "🌷🌷🌷🌷🌷🌷🌷🌷🌷🌷";
+    font-size: 4rem;
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+}
+
+/* 💌 SOBRE Y CARTA */
+.envelope-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.envelope {
+    width: 150px;
+    height: 100px;
+    background: #ffcc66;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    width: 140px;
+    height: 90px;
+    background: white;
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s;
+    transform: translateY(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.envelope-container:hover .letter {
+    transform: translateY(0);
+}
